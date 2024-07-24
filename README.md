@@ -15,6 +15,7 @@ This project is a custom WordPress theme extension designed to create a members-
 
 - **functions.php:** Contains functions to enqueue scripts and styles, and includes dashboard-specific functions.
 - **members-dashboard.php:** Custom page template for the dashboard, with HTML structure for navigation and content sections.
+- **dashboard-functions.php:** Contains functions specific to the dashboard, such as membership checks and additional utilities.
 - **dashboard.js:** JavaScript file to handle dynamic content loading and navigation.
 - **style.css:** Custom CSS to style the dashboard and its sections.
 
@@ -43,5 +44,3 @@ The dashboard uses jQuery to dynamically load different sections of content when
 Each section can be customized in the `members-dashboard.php` file and styled using the `style.css` file. Unique classes are provided for each section to facilitate specific styling needs.
 
 ---
-
-This README provides a comprehensive overview of the project, its features, and how to set it up and use it. Feel free to modify it according to your specific needs.
