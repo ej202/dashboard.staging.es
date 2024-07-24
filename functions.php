@@ -9,17 +9,9 @@
 // this code loads the parent's stylesheet (leave it in place unless you know what you're doing)
 
 function your_theme_enqueue_styles() {
-
     $parent_style = 'parent-style';
-
-    wp_enqueue_style( $parent_style, 
-      get_template_directory_uri() . '/style.css'); 
-
-    wp_enqueue_style( 'child-style', 
-      get_stylesheet_directory_uri() . '/style.css', 
-      array($parent_style), 
-      wp_get_theme()->get('Version') 
-    );
+    wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css'); 
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array($parent_style), wp_get_theme()->get('Version'));
 }
 
 add_action('wp_enqueue_scripts', 'your_theme_enqueue_styles');
@@ -35,6 +27,14 @@ function enqueue_onboarding_script() {
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_onboarding_script');
+
+function enqueue_paywall_styles() {
+    if (is_page_template('page-paywall.php')) {
+        wp_enqueue_style('paywall-css', get_stylesheet_directory_uri() . '/css/paywall.css'); // Updated to use child theme directory
+        error_log('Paywall CSS Enqueued'); // Debugging output
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_paywall_styles');
 
 // Handle AJAX request to save onboarding data
 function save_onboarding_data() {
@@ -84,3 +84,17 @@ function create_onboarding_post_type() {
     );
 }
 add_action('init', 'create_onboarding_post_type');
+
+// Enqueue the custom script for the dashboard page
+function enqueue_dashboard_script() {
+    if (is_page_template('members-dashboard.php')) {
+        wp_enqueue_script('dashboard-js', get_stylesheet_directory_uri() . '/js/dashboard.js', array('jquery'), null, true);
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_dashboard_script');
+
+// Include the dashboard functions
+require_once get_stylesheet_directory() . '/dashboard-functions.php';
+
+// Other existing functions and code
+?>
