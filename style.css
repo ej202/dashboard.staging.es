@@ -1,0 +1,106 @@
+body.members-dashboard {
+    background-color: #f0f0f0; /* Set your desired background color here */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.members-dashboard .dashboard-container {
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+    margin-left: 175px; /* Margin from the edge of the screen to column 1 */
+    margin-top: 50px; /* Margin from the top of the screen */
+}
+
+.members-dashboard .dashboard-column1 {
+    width: 310px;
+    border: 1px solid #000000; /* Border outline */
+    /* Additional styles for column 1 */
+}
+
+.members-dashboard .dashboard-column2 {
+    width: 900px;
+    padding: 10px; /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    /* Remove border for column 2 */
+}
+
+.members-dashboard .dashboard-row {
+    width: 800px;
+    border-radius: 15px;
+    background-color: white;
+    
+    padding: 1.25rem; /* Updated padding */
+    /* Additional styles for rows */
+}
+
+.members-dashboard .dashboard-row-column1,
+.members-dashboard .dashboard-row-column2 {
+    flex: 1;
+    
+    margin: 0 10px; /* Margin between columns */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.members-dashboard .dashboard-row-column1 p {
+    font-size: 0.75rem; /* Updated font size */
+    font-weight: normal; /* Example font weight */
+    margin: 0 0 10px 0; /* Adjust margins as needed */
+}
+
+.members-dashboard .dashboard-row-column1 h1 {
+    font-size: 3rem; /* Updated font size */
+    font-weight: bold; /* Example font weight */
+    margin: 0 0 10px 0; /* Adjust margins as needed */
+}
+
+.dashboard-section {
+    display: none;
+}
+
+.dashboard-section.active {
+    display: block;
+}
+
+/* Specific styles for each section */
+.dashboard-section {
+   width: 100%;    
+   border: 1px solid #000000;
+}
+
+.dashboard-section-2 {
+    border-color: red;
+}
+
+.dashboard-section-3 {
+    border-color: blue;
+}
+
+.dashboard-section-4 {
+    border-color: green;
+}
+
+.dashboard-section-5 {
+    border-color: yellow;
+}
+
+.dashboard-section-6 {
+    border-color: purple;
+}
+
+.dashboard-section-7 {
+    border-color: orange;
+}
+
+.dashboard-section-8 {
+    border-color: pink;
+}
+
+.dashboard-section-9 {
+    border-color: brown;
+}
